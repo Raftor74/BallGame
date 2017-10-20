@@ -144,13 +144,15 @@ function eatBoost(boosts, ...players) {
     {
         for (let j = 0; j < players.length; j++)
         {
-            if(inEllipseArea(players[j],boosts[i]))
-            {
-                if (boosts[i].direction === -1)
-                    players[j].x += boosts[i].power;
-                else
-                    players[j].y += boosts[i].power;
-                boosts.splice(i,1);
+            if (boosts[i]){
+                if(inEllipseArea(players[j],boosts[i]))
+                {
+                    if (boosts[i].direction === -1)
+                        players[j].x += boosts[i].power;
+                    else
+                        players[j].y += boosts[i].power;
+                    boosts.splice(i,1);
+                }
             }
         }
     }
@@ -162,11 +164,13 @@ function eatScope(scopes,...players) {
     {
         for (let j = 0; j < players.length; j++)
         {
-            if(inEllipseArea(players[j],scopes[i]))
-            {
-                players[j].scope += scopes[i].scope;
-                setPlayerScope(j+1,players[j].scope);
-                scopes.splice(i,1);
+            if (scopes[i]) {
+                if(inEllipseArea(players[j],scopes[i]))
+                {
+                    players[j].scope += scopes[i].scope;
+                    setPlayerScope(j+1,players[j].scope);
+                    scopes.splice(i,1);
+                }
             }
         }
     }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Randomize Games</title>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Stylesheets -->
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-center"><h1 id="player_one_nick">Player One</h1></div>
+                        <form role="form" id="player_one_form">
+                            <div class="form-group">
+                                <label for="player_one_name">Nickname</label>
+                                <input type="text" name="nick" class="form-control" id="player_one_name" placeholder="Enter nickname">
+                            </div>
+                        </form>
+                        <div class="scope">
+                            <h2>Scope</h2>
+                            <h3 id="player_one_scope">0</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center"><h1 id="player_two_nick">Player Two</h1></div>
+                        <form role="form" id="player_two_form">
+                            <div class="form-group">
+                                <label for="player_two_name">Nickname</label>
+                                <input type="text" name="nick" class="form-control" id="player_two_name" placeholder="Enter nickname">
+                            </div>
+                        </form>
+                        <div class="scope">
+                            <h2>Scope</h2>
+                            <h3 id="player_two_scope">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="playground_holder"></div>
+                <button type="button" class="btn btn-primary btn-lg" id="start_button" onclick="startGame(this)">Start</button>
+                <h2 id="winner"></h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- P5 library -->
+<script src="lib/p5.js" type="text/javascript"></script>
+<script src="lib/p5.sound.js" type="text/javascript"></script>
+<script src="lib/p5.dom.js" type="text/javascript"></script>
+<!-- Game Engine-->
+<script src="js/player.js" type="text/javascript"></script>
+<script src="js/core.js" type="text/javascript"></script>
+<script src="js/inventory.js" type="text/javascript"></script>
+</body>
+</html>

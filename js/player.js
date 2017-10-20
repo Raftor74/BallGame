@@ -1,17 +1,11 @@
-function Player(x, y, size, color) {
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.color = color;
-    this.r = this.size / 2;
-    this.scope = 0;
+class Player extends EllipseObject{
 
-    this.draw = function () {
-        fill(this.color);
-        ellipse(this.x, this.y, this.size);
+    constructor (x, y, size, color, scope = 0){
+        super(x,y,size,color);
+        this.scope = scope;
     }
 
-    this.randomMove = function () {
+    randomMove() {
         let randomNum = [-7,-6,-5,-4,-3,3,4,5,6,7];
         let moveX = random(randomNum);
         let moveY = random(randomNum);
@@ -23,9 +17,9 @@ function Player(x, y, size, color) {
             this.x += moveX;
 
         if (this.y + moveY < 0)
-            this.y = 0;
+            this.y = height + moveY;
         else if(this.y + moveY > height)
-            this.y = height;
+            this.y = moveY;
         else
             this.y += moveY;
     }

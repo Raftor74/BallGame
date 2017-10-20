@@ -1,27 +1,17 @@
-function Boost(x,y,size,color,power) {
-    this.x = x;
-    this.y = y;
-    this.color = color;
-    this.power = power;
-    this.size = size;
-    this.r = this.size / 2;
-
-    this.draw = function () {
-        fill(this.color);
-        ellipse(this.x,this.y,this.size);
+//Class for Boosts objects
+class Boost extends EllipseObject {
+    constructor(x,y,size,color,power,direction = -1){
+        super(x,y,size,color);
+        this.power = power;
+        //-1 - x axis, 1 - y axis
+        this.direction = direction;
     }
 }
 
-function ScopePoint(x,y,size,color,scope) {
-    this.x = x;
-    this.y = y;
-    this.color = color;
-    this.scope = scope;
-    this.size = size;
-    this.r = this.size / 2;
-
-    this.draw = function () {
-        fill(this.color);
-        ellipse(this.x,this.y,this.size);
+//Class for ScopePoints objects
+class ScopePoint extends EllipseObject{
+    constructor(x,y,size,color,scope = 0){
+        super(x,y,size,color);
+        this.scope = scope;
     }
 }
